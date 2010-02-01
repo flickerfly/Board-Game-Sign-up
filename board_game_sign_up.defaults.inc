@@ -553,3 +553,353 @@ function _board_game_sign_up_imagecache_default_presets() {
   );
   return $items;
 }
+
+/**
+ * Helper to implementation of hook_user_default_permissions().
+ */
+function _board_game_sign_up_user_default_permissions() {
+  $permissions = array();
+
+  // Exported permission: access all views
+  $permissions[] = array(
+    'name' => 'access all views',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: access comments
+  $permissions[] = array(
+    'name' => 'access comments',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: access content
+  $permissions[] = array(
+    'name' => 'access content',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: access user profiles
+  $permissions[] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: administer all signups
+  $permissions[] = array(
+    'name' => 'administer all signups',
+    'roles' => array(),
+  );
+
+  // Exported permission: administer comments
+  $permissions[] = array(
+    'name' => 'administer comments',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+    ),
+  );
+
+  // Exported permission: administer signups for own content
+  $permissions[] = array(
+    'name' => 'administer signups for own content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+    ),
+  );
+
+  // Exported permission: administer users
+  $permissions[] = array(
+    'name' => 'administer users',
+    'roles' => array(
+      '0' => 'Event Host',
+    ),
+  );
+
+  // Exported permission: cancel own signups
+  $permissions[] = array(
+    'name' => 'cancel own signups',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: cancel signups
+  $permissions[] = array(
+    'name' => 'cancel signups',
+    'roles' => array(),
+  );
+
+  // Exported permission: change own username
+  $permissions[] = array(
+    'name' => 'change own username',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: create event content
+  $permissions[] = array(
+    'name' => 'create event content',
+    'roles' => array(
+      '0' => 'Event Host',
+    ),
+  );
+
+  // Exported permission: create game content
+  $permissions[] = array(
+    'name' => 'create game content',
+    'roles' => array(
+      '0' => 'Table Host',
+    ),
+  );
+
+  // Exported permission: create location content
+  $permissions[] = array(
+    'name' => 'create location content',
+    'roles' => array(
+      '0' => 'Event Host',
+    ),
+  );
+
+  // Exported permission: create table content
+  $permissions[] = array(
+    'name' => 'create table content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+    ),
+  );
+
+  // Exported permission: delete any event content
+  $permissions[] = array(
+    'name' => 'delete any event content',
+    'roles' => array(),
+  );
+
+  // Exported permission: delete any game content
+  $permissions[] = array(
+    'name' => 'delete any game content',
+    'roles' => array(),
+  );
+
+  // Exported permission: delete any location content
+  $permissions[] = array(
+    'name' => 'delete any location content',
+    'roles' => array(),
+  );
+
+  // Exported permission: delete any table content
+  $permissions[] = array(
+    'name' => 'delete any table content',
+    'roles' => array(),
+  );
+
+  // Exported permission: delete own event content
+  $permissions[] = array(
+    'name' => 'delete own event content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: delete own game content
+  $permissions[] = array(
+    'name' => 'delete own game content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: delete own location content
+  $permissions[] = array(
+    'name' => 'delete own location content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: delete own table content
+  $permissions[] = array(
+    'name' => 'delete own table content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: edit any event content
+  $permissions[] = array(
+    'name' => 'edit any event content',
+    'roles' => array(),
+  );
+
+  // Exported permission: edit any game content
+  $permissions[] = array(
+    'name' => 'edit any game content',
+    'roles' => array(),
+  );
+
+  // Exported permission: edit any location content
+  $permissions[] = array(
+    'name' => 'edit any location content',
+    'roles' => array(),
+  );
+
+  // Exported permission: edit any table content
+  $permissions[] = array(
+    'name' => 'edit any table content',
+    'roles' => array(),
+  );
+
+  // Exported permission: edit own event content
+  $permissions[] = array(
+    'name' => 'edit own event content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: edit own game content
+  $permissions[] = array(
+    'name' => 'edit own game content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: edit own location content
+  $permissions[] = array(
+    'name' => 'edit own location content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: edit own signups
+  $permissions[] = array(
+    'name' => 'edit own signups',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: edit own table content
+  $permissions[] = array(
+    'name' => 'edit own table content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  // Exported permission: email all signed up users
+  $permissions[] = array(
+    'name' => 'email all signed up users',
+    'roles' => array(
+      '0' => 'Event Host',
+    ),
+  );
+
+  // Exported permission: email users signed up for own content
+  $permissions[] = array(
+    'name' => 'email users signed up for own content',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+    ),
+  );
+
+  // Exported permission: post comments
+  $permissions[] = array(
+    'name' => 'post comments',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: rate content
+  $permissions[] = array(
+    'name' => 'rate content',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: sign up for content
+  $permissions[] = array(
+    'name' => 'sign up for content',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view all signups
+  $permissions[] = array(
+    'name' => 'view all signups',
+    'roles' => array(
+      '0' => 'Event Host',
+    ),
+  );
+
+  // Exported permission: view imagecache Sidebar
+  $permissions[] = array(
+    'name' => 'view imagecache Sidebar',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view imagecache medium
+  $permissions[] = array(
+    'name' => 'view imagecache medium',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view imagecache small
+  $permissions[] = array(
+    'name' => 'view imagecache small',
+    'roles' => array(
+      '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view revisions
+  $permissions[] = array(
+    'name' => 'view revisions',
+    'roles' => array(
+      '0' => 'Event Host',
+      '1' => 'Table Host',
+      '2' => 'Veteran Gamer',
+    ),
+  );
+
+  return $permissions;
+}
